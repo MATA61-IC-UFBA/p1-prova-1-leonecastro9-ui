@@ -41,6 +41,7 @@ atribuicao:
 
 impressao:
     PRINT expressao
+    | PRINT '(' lista_args_multipla ')'
     ;
 
 expressao:
@@ -63,5 +64,11 @@ chamada_func:
 lista_args:
     expressao
     | lista_args ',' expressao
+    ;
+
+/* Regra para suportar as virgulas do print sem gerar conflitos */
+lista_args_multipla:
+    expressao ',' expressao
+    | lista_args_multipla ',' expressao
     ;
 %%

@@ -7,11 +7,11 @@
 %%
 [ \t\r]+                { }
 
-\\[^\n]* { }
+"//"[^\n]* { }
 
 "print"                 { return PRINT; }
 "concat"                { return CONCAT; }
-"comprimento"           { return COMPRIMENTO; }
+"length"                { return COMPRIMENTO; }
 
 [a-zA-Z_][a-zA-Z0-9_]* { return ID; }
 \"[^\n"]*\"             { return STRING; }
